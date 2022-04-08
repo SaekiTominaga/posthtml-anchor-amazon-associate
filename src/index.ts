@@ -19,16 +19,11 @@ export default (options: Options) => {
 			const content = node.content;
 			const attrs = node.attrs;
 
-			if (attrs?.href === undefined) {
-				console.warn('No `href` attribute', node);
-				return node;
-			}
-
-			let newClass = attrs.class;
+			let newClass = attrs?.class;
 			if (targetElementInfo.class !== undefined && targetElementInfo.class !== '') {
 				const CLASS_SEPARATOR = ' ';
 
-				const classList = attrs.class?.split(CLASS_SEPARATOR);
+				const classList = attrs?.class?.split(CLASS_SEPARATOR);
 				if (classList === undefined) {
 					/* class 属性なしの要素 */
 					return node;
@@ -41,6 +36,11 @@ export default (options: Options) => {
 				/* 指定されたクラス名を除去した上で変換する */
 				const newClassList = classList.filter((className) => className !== targetElementInfo.class && className !== '');
 				newClass = newClassList.length >= 1 ? newClassList.join(CLASS_SEPARATOR) : undefined;
+			}
+
+			if (attrs?.href === undefined) {
+				console.warn('No `href` attribute', node);
+				return node;
 			}
 
 			if (!attrs.href.match(/^https:\/\/www\.amazon\.[a-z]+(\.[a-z]+)?\/dp\/([\dA-Z]{10})\/$/)) {
