@@ -1,0 +1,34 @@
+{
+	"include": ["src/**/*.ts"],
+	"compilerOptions": {
+		/* Type Checking */
+		"allowUnreachableCode": false,
+		"alwaysStrict": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+
+		/* Modules */
+		"module": "ES2020",
+		"moduleResolution": "node",
+
+		/* Emit */
+		"declaration": true,
+		"declarationMap": true,
+		"newLine": "LF",
+		"outDir": "dist",
+		"sourceMap": true,
+
+		/* Interop Constraints */
+		"forceConsistentCasingInFileNames": true,
+
+		/* Language and Environment */
+		"target": "ESNext",
+
+		/* Projects */
+		"incremental": true
+	}
+}
