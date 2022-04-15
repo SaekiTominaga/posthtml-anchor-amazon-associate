@@ -1,6 +1,6 @@
 {
 	"name": "posthtml-anchor-amazon-associate",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Transform Amazon link URLs to associate link using PostHTML",
 	"keywords": [
 		"html",
