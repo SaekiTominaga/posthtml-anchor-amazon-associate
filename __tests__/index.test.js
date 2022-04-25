@@ -1,5 +1,6 @@
-import posthtml = require('posthtml');
-import posthtmlAnchorAmazonAssociate from '../src';
+import posthtmlAnchorAmazonAssociate from '../dist/index.js';
+import posthtml from 'posthtml';
+import { describe, expect, test } from '@jest/globals';
 
 describe('正常系', () => {
 	test('class 指定', async () => {

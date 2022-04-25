@@ -1,11 +1,10 @@
 {
 	"root": true,
 	"env": {
-		"es2021": true,
-		"jest/globals": true
+		"es2021": true
 	},
 	"extends": ["eslint:recommended"],
-	"plugins": ["jest"],
+	"plugins": [],
 	"parserOptions": {
 		"ecmaVersion": 2021,
 		"sourceType": "module"
@@ -87,8 +86,12 @@
 	},
 	"overrides": [
 		{
+			"files": ["*.js"],
+			"plugins": ["jest"]
+		},
+		{
 			"files": ["*.ts"],
-			"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/eslint-recommended"],
+			"extends": ["plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/eslint-recommended"],
 			"plugins": ["@typescript-eslint"],
 			"parser": "@typescript-eslint/parser"
 		}
