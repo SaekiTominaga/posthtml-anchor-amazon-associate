@@ -6,14 +6,11 @@ describe('正常系', () => {
 	test('class 指定', async () => {
 		expect(
 			(
-				await posthtml([posthtmlAnchorAmazonAssociate({ class: 'amazon-associate', associate_id: 'xxx-20' })]).process(`
-					<a href="https://www.amazon.com/dp/B01GRDKGZW/" class="amazon-associate">Link</a>
-					<a href="https://www.amazon.co.jp/dp/B01GRDKGZW/" class=" foo
-					amazon-associate	bar">Link</a>`)
+				await posthtml([posthtmlAnchorAmazonAssociate({ class: 'amazon-associate', associate_id: 'xxx-20' })]).process(
+					'<a href="https://www.amazon.com/dp/B01GRDKGZW/" class="amazon-associate">Link</a>'
+				)
 			).html
-		).toBe(`
-					<a href="https://www.amazon.com/dp/B01GRDKGZW/ref=nosim?tag=xxx-20">Link</a>
-					<a href="https://www.amazon.co.jp/dp/B01GRDKGZW/ref=nosim?tag=xxx-20" class="foo bar">Link</a>`);
+		).toBe('<a href="https://www.amazon.com/dp/B01GRDKGZW/ref=nosim?tag=xxx-20">Link</a>');
 	});
 	test('class 指定（変換対象外）', async () => {
 		expect(

@@ -31,6 +31,7 @@
 		"test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage"
 	},
 	"dependencies": {
+		"@saekitominaga/posthtml-match-class": "^1.0.0",
 		"posthtml": "^0.16.6"
 	},
 	"devDependencies": {
